@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580221992336",
+    "project_id": "tomonokai-word-wolf",
+    "storage_bucket": "tomonokai-word-wolf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580221992336:android:99d06d2b2311104d4b0715",
+        "android_client_info": {
+          "package_name": "com.example.word_wolf_tomonokai_public"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580221992336-d9cndgo0nh0on930nviui9gn1otbfman.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUBxsZEXYanwz7rYyIdHCEUnJaB3MFnRU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580221992336-d9cndgo0nh0on930nviui9gn1otbfman.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
