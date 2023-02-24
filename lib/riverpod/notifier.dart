@@ -18,8 +18,7 @@ class GameStateNotifier extends StateNotifier<GameStateModel> {
     isPassingScreen:false,
   );
 
-  void startNewGame() async{
-    //もしgameCountがmaxならCongratsのGIF??
+  void startNewGame() async {
     final newPlayedGameIndexes = (state.currentPlayerIndex == -1) ?
     [...state.playedGameIndexes] : [...state.playedGameIndexes, state.currentGameIndex];
     if (newPlayedGameIndexes.length != playableCardSets.length) {
@@ -28,15 +27,17 @@ class GameStateNotifier extends StateNotifier<GameStateModel> {
       while (randomNumber == -1 || newPlayedGameIndexes.contains(randomNumber)) {
         randomNumber = random.nextInt(playableCardSets.length);
       }
-      List<int> newWolfBoolArray = List.generate(state.playerCount, (index) => 0, growable: false);
       int randomWolfIndex = random.nextInt(state.playerCount);
-      newWolfBoolArray[randomWolfIndex] = 1;
+      final wolfNumber = random.nextInt(100) % 2;
+      List<int> newWolfBoolArray = List.generate(
+          state.playerCount, (index) => (wolfNumber == 0) ? 1 : 0, growable: false);
+      newWolfBoolArray[randomWolfIndex] = wolfNumber;
       if (state.playerCount > 7) {
-        int randomExtraWolfIndex =  -1;
+        int randomExtraWolfIndex = -1;
         while (randomExtraWolfIndex == -1 || randomExtraWolfIndex == randomWolfIndex) {
           randomExtraWolfIndex = random.nextInt(state.playerCount);
         }
-        newWolfBoolArray[randomExtraWolfIndex] = 1;
+        newWolfBoolArray[randomExtraWolfIndex] = wolfNumber;
       }
       state = GameStateModel(
         playerCount: state.playerCount,
@@ -44,7 +45,7 @@ class GameStateNotifier extends StateNotifier<GameStateModel> {
         currentGameIndex: randomNumber,
         playedGameIndexes: [...newPlayedGameIndexes],
         wolfBoolArray: [...newWolfBoolArray],
-        isPlayerCountConfirmed:state.isPlayerCountConfirmed,
+        isPlayerCountConfirmed: state.isPlayerCountConfirmed,
         isPassingScreen: state.isPassingScreen,
       );
     } else {
@@ -54,7 +55,7 @@ class GameStateNotifier extends StateNotifier<GameStateModel> {
         currentGameIndex: state.currentGameIndex,
         playedGameIndexes: [...newPlayedGameIndexes],
         wolfBoolArray: state.wolfBoolArray,
-        isPlayerCountConfirmed:state.isPlayerCountConfirmed,
+        isPlayerCountConfirmed: state.isPlayerCountConfirmed,
         isPassingScreen: state.isPassingScreen,
       );
     }
