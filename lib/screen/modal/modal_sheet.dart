@@ -67,6 +67,21 @@ class WWDrawer extends HookConsumerWidget {
                 ),
               )
           ),
+          SizedBox(height: 5.h,),
+          GestureDetector(
+              onTap: () {
+                showLicensePage(context : context);
+              },
+              child:  Text(
+                "Licenses",
+                style: GoogleFonts.notoSerif(
+                  fontSize: (100.w > 550 ) ? 18 : 18.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black.withOpacity(.65),
+                  decoration: TextDecoration.none,
+                ),
+              )
+          ),
         ],
       ),
     );

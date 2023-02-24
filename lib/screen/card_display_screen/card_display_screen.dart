@@ -26,7 +26,7 @@ class CardDisplayScreen extends HookConsumerWidget {
             SizedBox(height: 5.h,),
             BigButton(
                 label: Text(
-                  'Pass to the next buddy!',
+                  'Pass to your next buddy!',
                   style  : GoogleFonts.notoSerif(
                     fontSize: (100.w > 550 ) ? 21 : 18.sp,
                     fontWeight: FontWeight.w600,
@@ -55,7 +55,7 @@ class CardDisplayScreen extends HookConsumerWidget {
                           barrierColor: Colors.white24,
                           customAsset: 'assets/running.png',
                           autoCloseDuration: const Duration(seconds: 5),
-                          title: 'Pass to the next buddy in 5 seconds!',
+                          title: 'Pass to your next buddy in 5 seconds!',
                           text: '' ,
                         );
                         await Future.delayed(const Duration(seconds: 5)).then((_) async{
@@ -90,7 +90,7 @@ class CardDisplayScreen extends HookConsumerWidget {
             SizedBox(height: 3.h,),
             BigButton(
                 label: Text(
-                    "Pass to Previous Buddy",
+                    "Pass to your previous buddy",
                     style: GoogleFonts.notoSerif(
                       fontSize: (100.w > 550 ) ? 18 : 15.sp,
                       fontWeight: FontWeight.w600,
@@ -116,7 +116,7 @@ class CardDisplayScreen extends HookConsumerWidget {
                             barrierColor: Colors.white24,
                             customAsset: 'assets/running.png',
                             autoCloseDuration: const Duration(seconds: 5),
-                            title: 'Pass to the previous buddy in 5 seconds!',
+                            title: 'Pass to your previous buddy in 5 seconds!',
                             text: '' ,
                           );
                           await Future.delayed(const Duration(seconds: 5)).then((_) async{
