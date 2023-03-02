@@ -41,7 +41,7 @@ class  NumberInputButton extends HookConsumerWidget {
                   child: Text(
                     num.toString(),
                     style: GoogleFonts.notoSerif(
-                      fontSize: 30,
+                      fontSize: (100.w > 550) ? 30 : 21.sp,
                       fontWeight: FontWeight.w600,
                       color: Colors.black.withOpacity(.65),
                       decoration: TextDecoration.none,

@@ -14,10 +14,11 @@ class  PlayConfirmButton extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Stack(
+    return Container(
+      margin: (100.w > 550) ? const EdgeInsets.all(15) : EdgeInsets.all(2.5.w),
+      child : Stack(
       children: [
         Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: ClayContainer(
             height: (100.w > 550) ? 80 : 17.w,
             width: (100.w > 550) ? 180 : 37.w,
@@ -35,7 +36,6 @@ class  PlayConfirmButton extends HookConsumerWidget {
               ref.watch(gameStateModelProvider.notifier).confirmPlayerCount();
             },
             child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: ClayContainer(
                 height: (100.w > 550) ? 70 :15.w,
                 width: (100.w > 550) ? 160 : 35.w,
@@ -50,15 +50,15 @@ class  PlayConfirmButton extends HookConsumerWidget {
                         TextSpan(
                           text : "Lets Play",
                           style: GoogleFonts.notoSerif(
-                            fontSize: 21,
+                            fontSize: (100.w > 550) ? 21 : 18.sp,
                             fontWeight: FontWeight.w800,
                             color: Colors.black.withOpacity(.65),
                           ),
                         ),
-                        const TextSpan(
+                        TextSpan(
                           text : "👑",
                           style: TextStyle(
-                            fontSize: 21,
+                            fontSize: (100.w > 550) ? 21 : 18.sp,
                           ),
                         ),
                       ],
@@ -70,6 +70,7 @@ class  PlayConfirmButton extends HookConsumerWidget {
           ),
         ),
       ],
+    ),
     );
   }
 }

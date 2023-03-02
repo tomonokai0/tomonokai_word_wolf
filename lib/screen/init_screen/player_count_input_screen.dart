@@ -28,7 +28,7 @@ class  NumberInputScreen extends HookConsumerWidget {
                   Text(
                     "How Many Players?",
                     style: GoogleFonts.playfairDisplay(
-                      fontSize: (100.w > 550 ) ? 24 : 24.sp,
+                      fontSize: (100.w > 550 ) ? 24 : 21.sp,
                       fontWeight: FontWeight.w600,
                       color: Colors.black.withOpacity(.65),
                     ),
@@ -72,7 +72,7 @@ class  NumberInputScreen extends HookConsumerWidget {
                             child: Text(
                               playerCount.toString(),
                               style: GoogleFonts.notoSerif(
-                                fontSize: 27,
+                                fontSize: (100.w > 550) ? 30 : 21.sp,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(.65),
                               ),
@@ -80,8 +80,6 @@ class  NumberInputScreen extends HookConsumerWidget {
                           ),
                         ),
                       ),
-
-
                     ],
                   ),
                   SizedBox(height: (2.5).h,),

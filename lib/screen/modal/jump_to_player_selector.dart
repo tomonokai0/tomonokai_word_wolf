@@ -41,12 +41,16 @@ class  JumpToPlayerInputScreen extends HookConsumerWidget {
               children: List.generate(playerCount, (index) {
                 return  Stack(
                   children: [
-                    Container(
-                      height: (100.w > 550) ? 70  : 15.w,
-                      width: (100.w > 550) ? 70 : 15.w,
+                    Positioned(
+                      top: (100.w > 550) ? 5 : 1.w,
+                      left: (100.w > 550) ? 5 : 1.w,
+                    child :Container(
+                      height: (100.w > 550) ? 80 : 17.w,
+                      width: (100.w > 550) ? 80  : 17.w,
                       color: Colors.transparent,
                       child: GestureDetector(
                         onTap: () async{
+                          print(true);
                           await QuickAlert.show(
                               context: context,
                               type: QuickAlertType.confirm,
@@ -62,7 +66,7 @@ class  JumpToPlayerInputScreen extends HookConsumerWidget {
                                   barrierColor: Colors.white24,
                                   customAsset: 'assets/running.png',
                                   autoCloseDuration: const Duration(seconds: 5),
-                                  title: 'Pass to Player${index+1}  in 5 seconds!',
+                                  title: 'Pass to Player${index+1} in 5 seconds!',
                                   text: '' ,
                                 );
                                 await Future.delayed(const Duration(seconds: 5)).then((_) async{
@@ -71,7 +75,7 @@ class  JumpToPlayerInputScreen extends HookConsumerWidget {
                                       type: QuickAlertType.confirm,
                                       backgroundColor: Colors.white24,
                                       barrierColor: Colors.white24,
-                                      title: 'Are you Player ${index+1}?',
+                                      title: 'Are you Player${index+1}?',
                                       confirmBtnText: 'Yes',
                                       customAsset: "assets/wait.png",
                                       onConfirmBtnTap: () {
@@ -89,8 +93,11 @@ class  JumpToPlayerInputScreen extends HookConsumerWidget {
                         },
                       ),
                     ),
-                    SizedBox(
-                      child: NumberInputButton(num: index + 1)
+                    ),
+                    IgnorePointer(
+                      child: SizedBox(
+                          child: NumberInputButton(num: index + 1)
+                      ),
                     ),
                   ],
                 );
